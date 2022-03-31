@@ -13,7 +13,7 @@ import com.royalboe.bakingtutorial.databinding.FragmentFirstBinding
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment : Fragment() {
+class RecipeListFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
 
@@ -28,6 +28,9 @@ class FirstFragment : Fragment() {
     ): View {
 
         _binding = FragmentFirstBinding.inflate(inflater)
+
+        binding.lifecycleOwner = this
+        binding.viewModel = viewModel
         return binding.root
 
     }

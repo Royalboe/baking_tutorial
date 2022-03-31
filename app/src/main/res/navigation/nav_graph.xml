@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.royalboe.bakingtutorial.recipelist.FirstFragment"
+        android:name="com.royalboe.bakingtutorial.recipelist.RecipeListFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 
