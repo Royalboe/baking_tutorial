@@ -23,7 +23,9 @@ class RecipeListFragment : Fragment() {
     private var player: ExoPlayer? = null
     private val contexts = requireContext()
     private val uri: Uri = Uri.parse("https://storage.googleapis.com/exoplayer-test-media-0/play.mp3")
-
+    private var playWhenReady = true
+    private var currentWindow = 0
+    private var playbackPosition = 0L
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -51,13 +53,16 @@ class RecipeListFragment : Fragment() {
 
     }
 
-    fun initializePlayer(){
+    private fun initializePlayer(){
         player = ExoPlayer.Builder(contexts)
             .build()
             .also {
                 binding.videoPlayer.player = it
                 val mediaItem = MediaItem.fromUri(uri)
                 it.setMediaItem(mediaItem)
+                it.playWhenReady = playWhenReady
+                it.seekTo(currentWindow, playbackPosition)
+                it.prepare()
             }
     }
 
@@ -92,7 +97,13 @@ class RecipeListFragment : Fragment() {
     }
 
     private fun releasePlayer() {
-        TODO("Not yet implemented")
+       player?.run {
+           playbackPosition = this.currentPosition
+           currentWindow = this.currentMediaItemIndex
+           playWhenReady = this.playWhenReady
+           release()
+       }
+        player = null
     }
 
     override fun onDestroyView() {
