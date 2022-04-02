@@ -3,16 +3,22 @@ package com.royalboe.bakingtutorial.recipelist
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.royalboe.bakingtutorial.network.RecipeApi
+import kotlinx.coroutines.launch
 
 class RecipeListViewModel: ViewModel() {
     private val _status = MutableLiveData<String>()
     val status: LiveData<String> = _status
 
     init {
-        getRecipes()
+        getRecipesData()
     }
 
-    private fun getRecipes() {
-        _status.value = "Set API status response"
+    private fun getRecipesData() {
+        viewModelScope.launch {
+            val listResult = RecipeApi.retrofitService.getRecipes()
+            _status.value = listResult
+        }
     }
 }
