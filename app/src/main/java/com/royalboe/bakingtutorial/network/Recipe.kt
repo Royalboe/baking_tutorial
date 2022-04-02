@@ -1,20 +1,22 @@
 package com.royalboe.bakingtutorial.network
 
+import com.squareup.moshi.Json
+
 data class Recipe(
-    val recipeId: Int,
-    val recipeName: String,
+    @Json(name = "id") val recipeId: String,
+    @Json(name = "name") val recipeName: String,
     val ingredients: Ingredient,
-    val steps: Steps,
-    val servings: Int,
+    val steps: Step,
+    val servings: String,
     val image: String
 )
 
-data class Steps(
-    val stepId: Int,
+data class Step(
+    @Json(name = "id")val stepId: String,
     val shortDescription: String,
     val description: String,
-    val videoUrl: String,
-    val thumbNailUrl: String
+    @Json(name = "videoURL")val videoUrl: String,
+    @Json(name = "thumbnailURL")val thumbNailUrl: String
 )
 
 data class Ingredient(
