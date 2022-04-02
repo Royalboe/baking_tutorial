@@ -1,5 +1,6 @@
 package com.royalboe.bakingtutorial.recipelist
 
+import android.annotation.SuppressLint
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -77,6 +78,8 @@ class RecipeListFragment : Fragment() {
         if (Util.SDK_INT < 24 || player == null) initializePlayer()
     }
 
+    @SuppressLint("InlineApi")
+    @SuppressWarnings()
     private fun hideSystemUi() {
         binding.videoPlayer.systemUiVisibility = (View.SYSTEM_UI_FLAG_LOW_PROFILE
                 or View.SYSTEM_UI_FLAG_FULLSCREEN
