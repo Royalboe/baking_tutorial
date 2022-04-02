@@ -4,12 +4,15 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.royalboe.bakingtutorial.network.Recipe
 import com.royalboe.bakingtutorial.network.RecipeApi
 import kotlinx.coroutines.launch
 
 class RecipeListViewModel: ViewModel() {
     private val _status = MutableLiveData<String>()
     val status: LiveData<String> = _status
+    private val _recipe = MutableLiveData<Recipe>()
+    val recipe: LiveData<Recipe> = _recipe
 
     init {
         getRecipesData()
@@ -18,8 +21,8 @@ class RecipeListViewModel: ViewModel() {
     private fun getRecipesData() {
         viewModelScope.launch {
             try {
-                val listResult = RecipeApi.retrofitService.getRecipes()
-                _status.value = "Success: Size of recipe retrieved: ${listResult.size}"
+                _recipe.value = RecipeApi.retrofitService.getRecipes()[0]
+                _status.value = "Success: The first recipe ingredients are ${_recipe.value!!.ingredients}"
             } catch (e:Exception) {
                 _status.value = "failure ${e.message}"
             }
