@@ -17,8 +17,12 @@ class RecipeListViewModel: ViewModel() {
 
     private fun getRecipesData() {
         viewModelScope.launch {
-            val listResult = RecipeApi.retrofitService.getRecipes()
-            _status.value = listResult
+            try {
+                val listResult = RecipeApi.retrofitService.getRecipes()
+                _status.value = listResult
+            } catch (e:Exception) {
+                _status.value = "failure ${e.message}"
+            }
         }
     }
 }
