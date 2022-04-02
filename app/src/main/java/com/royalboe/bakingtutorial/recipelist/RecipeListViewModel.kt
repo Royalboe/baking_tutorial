@@ -19,7 +19,7 @@ class RecipeListViewModel: ViewModel() {
         viewModelScope.launch {
             try {
                 val listResult = RecipeApi.retrofitService.getRecipes()
-                _status.value = listResult
+                _status.value = "Success: Size of recipe retrieved: ${listResult.size}"
             } catch (e:Exception) {
                 _status.value = "failure ${e.message}"
             }
