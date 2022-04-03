@@ -1,7 +1,6 @@
 package com.royalboe.bakingtutorial.recipelist
 
 import android.annotation.SuppressLint
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -22,8 +21,8 @@ class RecipeListFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
     private var player: ExoPlayer? = null
-    private val contexts = requireContext()
-    private val uri: Uri = Uri.parse("https://storage.googleapis.com/exoplayer-test-media-0/play.mp3")
+    private val contexts by lazy{ requireContext() }
+    private val uri = "https://storage.googleapis.com/exoplayer-test-media-0/play.mp3"
     private var playWhenReady = true
     private var currentWindow = 0
     private var playbackPosition = 0L
