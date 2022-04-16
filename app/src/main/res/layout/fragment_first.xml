@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbars="vertical"
-            tools:listitem="@layout/list_view" />
+            tools:listitem="@layout/recipe_list_view" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
