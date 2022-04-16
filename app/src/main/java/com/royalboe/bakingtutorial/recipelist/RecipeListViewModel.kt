@@ -11,8 +11,8 @@ import kotlinx.coroutines.launch
 class RecipeListViewModel: ViewModel() {
     private val _status = MutableLiveData<String>()
     val status: LiveData<String> = _status
-    private val _recipe = MutableLiveData<Recipe>()
-    val recipe: LiveData<Recipe> = _recipe
+    private val _recipe = MutableLiveData<List<Recipe>>()
+    val recipe: LiveData<List<Recipe>> = _recipe
 
     init {
         getRecipesData()
@@ -21,8 +21,8 @@ class RecipeListViewModel: ViewModel() {
     private fun getRecipesData() {
         viewModelScope.launch {
             try {
-                _recipe.value = RecipeApi.retrofitService.getRecipes()[0]
-                _status.value = "Success: The first recipe ingredients are ${_recipe.value!!.ingredients}"
+                _recipe.value = RecipeApi.retrofitService.getRecipes()
+                _status.value = "Success: The first recipe ingredients are ${_recipe.value!!}"
             } catch (e:Exception) {
                 _status.value = "failure ${e.message}"
             }
