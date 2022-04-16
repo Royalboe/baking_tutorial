@@ -39,8 +39,17 @@
                 android:drawableEnd="@drawable/check_ingredients_arrow"
                 android:minHeight="@dimen/text_box_height"
                 android:text="@string/check_ingredients"
-                android:textAllCaps="false"
-                app:backgroundTint="@color/white"/>
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/steps_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:drawableEnd="@drawable/arrow"
+                android:minHeight="@dimen/text_box_height"
+                android:text="@string/check_steps"
+                android:textAllCaps="false" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 </layout>
