@@ -1,4 +1,5 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="margins">8dp</dimen>
+    <dimen name="text_box_height">50dp</dimen>
 </resources>
