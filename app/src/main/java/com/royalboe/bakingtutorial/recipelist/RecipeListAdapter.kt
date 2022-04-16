@@ -4,10 +4,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class RecipeListAdapter: RecyclerView.Adapter<RecipeListAdapter.RecipeListViewHolder>() {
+class RecipeListAdapter(private val viewModel: RecipeListViewModel): RecyclerView.Adapter<RecipeListAdapter.RecipeListViewHolder>() {
 
     class RecipeListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeListViewHolder {
@@ -18,7 +17,5 @@ class RecipeListAdapter: RecyclerView.Adapter<RecipeListAdapter.RecipeListViewHo
         TODO("Not yet implemented")
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount() = viewModel.recipe.value!!.size
 }
