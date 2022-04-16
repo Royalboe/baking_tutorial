@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:drawableEnd="@drawable/check_ingredients_arrow"
+                android:drawableEnd="@drawable/arrow"
                 android:minHeight="@dimen/text_box_height"
                 android:text="@string/check_ingredients"
                 android:textAllCaps="false" />
