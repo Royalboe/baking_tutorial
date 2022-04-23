@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
@@ -19,19 +20,22 @@
 
             <TextView
                 android:id="@+id/index"
-                android:text="@{recipe.recipeId}"
+                android:text="@{recipe.recipeId.toString()}"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                tools:text="1"/>
 
             <TextView
                 android:id="@+id/recipe_name"
                 android:text="@{recipe.recipeName}"
+                tools:text="Nutella"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/servings"
-                android:text="@{recipe.servings}"
+                android:text="@{recipe.servings.toString()}"
+                tools:text="8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
