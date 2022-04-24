@@ -16,4 +16,7 @@
     <dimen name="radius">20dp</dimen>
     <dimen name="smaller_icon_size">50dp</dimen>
     <dimen name="bigger_icon_size">80dp</dimen>
+    <dimen name="recycler_padding">6dp</dimen>
+    <dimen name="recipe_list_padding">2dp</dimen>
+    <dimen name="cardview_elevation">5dp</dimen>
 </resources>

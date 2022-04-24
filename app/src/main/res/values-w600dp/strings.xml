@@ -3,4 +3,5 @@
     <string name="check_ingredients">Check Ingredients</string>
     <string name="check_steps">Check Steps</string>
     <string name="recipe_list">Recipe List</string>
+    <string name="recipe_id_recipe_recipeid">Recipe ID @{recipe.recipeId}</string>
 </resources>
