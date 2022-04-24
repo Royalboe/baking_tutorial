@@ -13,4 +13,6 @@
     <string name="check_steps">Check Steps</string>
     <string name="recipe_list">Recipe List</string>
     <string name="recipe_id_recipe">Recipe ID %1$s</string>
+    <string name="recipe_name">Recipe Name %1$s</string>
+    <string name="recipe_servings">Servings %1$s</string>
 </resources>

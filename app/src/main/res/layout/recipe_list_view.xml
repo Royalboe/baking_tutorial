@@ -12,17 +12,15 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/recipelist_card_view"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margins"
-        android:padding="@dimen/recipe_list_padding"
         app:cardCornerRadius="@dimen/card_view_corner_radius"
         app:cardBackgroundColor="@color/white"
         app:cardElevation="@dimen/cardview_elevation">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center_horizontal">
 
@@ -37,7 +35,7 @@
 
             <TextView
                 android:id="@+id/recipe_name"
-                android:text="@{recipe.recipeName}"
+                android:text="@{@string/recipe_name(recipe.recipeName)}"
                 tools:text="Nutella"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="match_parent"
@@ -47,7 +45,7 @@
 
             <TextView
                 android:id="@+id/servings"
-                android:text="@{recipe.servings}"
+                android:text="@{@string/recipe_servings(recipe.servings)}"
                 tools:text="8"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="match_parent"

@@ -11,22 +11,21 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         tools:context=".recipelist.RecipeListFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recipe_list_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            listdata="@{viewModel.recipe}"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:padding="@dimen/recycler_padding"
             android:scrollbars="vertical"
-            android:lineSpacingExtra="@dimen/margin"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:listdata="@{viewModel.recipe}"
             tools:itemCount="4"
             tools:listitem="@layout/recipe_list_view" />
 
