@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.royalboe.bakingtutorial.databinding.FragmentFirstBinding
+import com.royalboe.bakingtutorial.network.Recipe
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -33,7 +34,8 @@ class RecipeListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.recipeListRecyclerView.adapter = RecipeListAdapter(viewModel)
+        val dataset:List<Recipe> = viewModel.recipe.value!!
+        binding.recipeListRecyclerView.adapter = RecipeListAdapter(viewModel, dataset)
         }
 
     override fun onDestroyView() {

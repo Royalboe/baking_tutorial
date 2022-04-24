@@ -3,14 +3,11 @@ package com.royalboe.bakingtutorial.recipelist
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.royalboe.bakingtutorial.databinding.RecipeListViewBinding
 import com.royalboe.bakingtutorial.network.Recipe
 
-class RecipeListAdapter(private val viewModel: RecipeListViewModel): ListAdapter<Recipe, RecipeListAdapter.RecipeListViewHolder>(
-    DiffCallBack
-) {
+class RecipeListAdapter(private val viewModel: RecipeListViewModel, private val dataset: List<Recipe>): RecyclerView.Adapter<RecipeListAdapter.RecipeListViewHolder>() {
 
     class RecipeListViewHolder(private val view: RecipeListViewBinding) : RecyclerView.ViewHolder(view.root){
         fun bind(recipe: Recipe) {
@@ -39,4 +36,6 @@ class RecipeListAdapter(private val viewModel: RecipeListViewModel): ListAdapter
             return oldItem.recipeName == newItem.recipeName
         }
     }
+
+    override fun getItemCount() = dataset.size
 }
