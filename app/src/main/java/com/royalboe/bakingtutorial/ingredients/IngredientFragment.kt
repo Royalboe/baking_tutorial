@@ -1,4 +1,4 @@
-package com.royalboe.bakingtutorial
+package com.royalboe.bakingtutorial.ingredients
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -10,12 +10,13 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.util.Util
+import com.royalboe.bakingtutorial.R
 import com.royalboe.bakingtutorial.databinding.FragmentSecondBinding
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
-class SecondFragment : Fragment() {
+class IngredientFragment : Fragment() {
 
     private var _binding: FragmentSecondBinding? = null
     private var player: ExoPlayer? = null
