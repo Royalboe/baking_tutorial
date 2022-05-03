@@ -1,4 +1,4 @@
-package com.royalboe.bakingtutorial.recipelist
+package com.royalboe.bakingtutorial
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

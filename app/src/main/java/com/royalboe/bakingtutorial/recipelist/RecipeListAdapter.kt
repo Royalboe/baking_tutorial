@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.royalboe.bakingtutorial.RecipeListViewModel
 import com.royalboe.bakingtutorial.databinding.RecipeListViewBinding
 import com.royalboe.bakingtutorial.network.Recipe
 

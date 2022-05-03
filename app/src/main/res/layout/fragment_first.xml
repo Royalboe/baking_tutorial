@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.royalboe.bakingtutorial.recipelist.RecipeListViewModel" />
+            type="com.royalboe.bakingtutorial.RecipeListViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
