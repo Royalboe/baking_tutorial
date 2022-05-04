@@ -10,7 +10,7 @@ import com.royalboe.bakingtutorial.network.Ingredient
 class IngredientsAdapter: ListAdapter<Ingredient, IngredientsAdapter.IngredientViewHolder>(
     DiffUtilCallback
 ) {
-    class IngredientViewHolder(val binding: IngredientsViewBinding): RecyclerView.ViewHolder(binding.root) {
+    class IngredientViewHolder(private val binding: IngredientsViewBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(ingredient: Ingredient) {
             binding.ingredient = ingredient
         }
