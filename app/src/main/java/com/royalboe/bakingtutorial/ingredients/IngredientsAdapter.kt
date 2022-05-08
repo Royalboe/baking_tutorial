@@ -1,18 +1,22 @@
 package com.royalboe.bakingtutorial.ingredients
 
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.royalboe.bakingtutorial.databinding.IngredientsViewBinding
 import com.royalboe.bakingtutorial.network.Ingredient
+import com.royalboe.bakingtutorial.network.Recipe
 
-class IngredientsAdapter: ListAdapter<Ingredient, IngredientsAdapter.IngredientViewHolder>(
+class IngredientsAdapter(val recipe: Recipe): ListAdapter<Ingredient, IngredientsAdapter.IngredientViewHolder>(
     DiffUtilCallback
 ) {
+    val dataset = recipe.ingredients
     class IngredientViewHolder(private val binding: IngredientsViewBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(ingredient: Ingredient) {
             binding.ingredient = ingredient
+            binding.executePendingBindings()
         }
     }
 
@@ -31,10 +35,11 @@ class IngredientsAdapter: ListAdapter<Ingredient, IngredientsAdapter.IngredientV
         parent: ViewGroup,
         viewType: Int
     ): IngredientsAdapter.IngredientViewHolder {
-        TODO("Not yet implemented")
+        return IngredientViewHolder(IngredientsViewBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
     override fun onBindViewHolder(holder: IngredientsAdapter.IngredientViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val item = dataset[position]
+        holder.bind(item)
     }
 }

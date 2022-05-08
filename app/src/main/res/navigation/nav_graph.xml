@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.royalboe.bakingtutorial.ingredients.IngredientFragment"
+        android:name="com.royalboe.bakingtutorial.ingredients.VideoFragment"
         android:label="@string/ingredients"
         tools:layout="@layout/fragment_second">
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
@@ -16,6 +17,7 @@
             android:id="@+id/ingredient_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@{ingredient.ingredientName}"
             android:layout_marginStart="@dimen/margin"
             android:layout_marginTop="@dimen/margin"
             android:minHeight="@dimen/text_box_height"
@@ -29,6 +31,7 @@
             android:id="@+id/ingredient_measure"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@{ingredient.measure}"
             android:layout_marginStart="@dimen/margin"
             android:layout_marginTop="@dimen/margin"
             android:minHeight="@dimen/text_box_height"
@@ -40,13 +43,25 @@
             android:id="@+id/ingredient_quantity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@{ingredient.quantity}"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_size"
             android:minHeight="@dimen/text_box_height"
             android:padding="3dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ingredient_measure"
             android:layout_marginStart="@dimen/margin"
             android:layout_marginTop="@dimen/margin"
-            android:layout_marginEnd="@dimen/margin"/>
+            android:layout_marginEnd="@dimen/margin"
+            tools:text="30"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/check_steps"
+            app:layout_constraintTop_toBottomOf="@id/ingredient_quantity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
