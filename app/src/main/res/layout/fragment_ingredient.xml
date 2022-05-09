@@ -12,12 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ingredients.IngredientFragment">
-
-        <!-- TODO: Update blank fragment layout -->
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            listdata="@{viewModel.recipe}"/>
+            tools:listitem="@layout/ingredients_view"/>
 
     </FrameLayout>
 </layout>

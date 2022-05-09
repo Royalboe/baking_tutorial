@@ -14,6 +14,12 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_recipe_list_to_ingredientFragment"
+            app:destination="@id/ingredientFragment" />
+        <argument
+            android:name="recipeIndex"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -24,5 +30,16 @@
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/recipe_list" />
+    </fragment>
+    <fragment
+        android:id="@+id/ingredientFragment"
+        android:name="com.royalboe.bakingtutorial.ingredients.IngredientFragment"
+        android:label="IngredientFragment" >
+        <action
+            android:id="@+id/action_ingredientFragment_to_recipe_list"
+            app:destination="@id/recipe_list" />
+        <action
+            android:id="@+id/action_ingredientFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
     </fragment>
 </navigation>
